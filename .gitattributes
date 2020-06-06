@@ -1,0 +1,21 @@
+# Autodetect text files
+* text=auto
+
+# ...Unless the name matches the following
+# overriding patterns
+
+# Definitively text files
+*.txt text
+*.svg text
+*.md text
+*.py text
+*.js text
+*.sh text eol=lf
+*.yml text eol=lf
+Dockerfile text eol=lf
+
+# Ensure those won't be messed up with
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.data binary

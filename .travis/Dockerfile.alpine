@@ -1,0 +1,33 @@
+FROM monogramm/docker-erpnext:%%VERSION%%-alpine
+
+RUN set -ex; \
+    sudo apk add --update \
+        chromium \
+        chromium-chromedriver \
+    ;
+
+# Build environment variables
+ENV DOCKER_TAG=travis \
+    DOCKER_VCS_REF=${TRAVIS_COMMIT} \
+    DOCKER_BUILD_DATE=${TRAVIS_BUILD_NUMBER} \
+    LANG=C.UTF-8 \
+    LC_ALL=C
+
+
+ARG BUILD_BRANCH
+ARG BUILD_URL
+ARG BUILD_APP
+
+RUN set -ex; \
+    sudo apk add --update \
+        #add here your system packages
+    ; \
+    sudo mkdir -p "/home/$FRAPPE_USER"/frappe-bench/logs; \
+    sudo touch "/home/$FRAPPE_USER"/frappe-bench/logs/bench.log; \
+    sudo chmod 777 \
+        "/home/$FRAPPE_USER"/frappe-bench/logs \
+        "/home/$FRAPPE_USER"/frappe-bench/logs/* \
+    ; \
+    bench get-app --branch "${BUILD_BRANCH}" "${BUILD_APP}" "${BUILD_URL}"
+
+VOLUME "/home/${FRAPPE_USER}/frappe-bench/apps/${BUILD_APP}/public"
