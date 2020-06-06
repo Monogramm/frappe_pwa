@@ -12,10 +12,10 @@ def get_data():
     """Returns the application desktop icons configuration."""
     return [
         {
-            "module_name": "ERPNext Template",
+            "module_name": "Frappe PWA",
             "color": "grey",
             "icon": "octicon octicon-file-directory",
             "type": "module",
-            "label": _("ERPNext Template")
+            "label": _("Frappe PWA")
         }
     ]

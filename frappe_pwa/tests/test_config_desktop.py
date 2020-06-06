@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 
 import unittest
 
-from erpnext_template.config.desktop import get_data
+from frappe_pwa.config.desktop import get_data
 
 
 class TestDesktop(unittest.TestCase):

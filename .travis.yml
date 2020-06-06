@@ -20,7 +20,7 @@ before_install:
   - export travis_dir="${home}/.travis"
   - export BUILD_BRANCH=${TRAVIS_PULL_REQUEST_BRANCH:-${TRAVIS_BRANCH}}
   - export BUILD_URL=https://github.com/${TRAVIS_PULL_REQUEST_SLUG:-${TRAVIS_REPO_SLUG}}
-  - export BUILD_APP=erpnext_template
+  - export BUILD_APP=frappe_pwa
 
 install:
   - echo "Changing to travis test directory ($travis_dir)"
@@ -78,7 +78,7 @@ after_script:
   - sudo pip install python-coveralls
   # Create same directory path as docker test execution
   - sudo mkdir -p '/home/frappe/frappe-bench/apps'
-  - sudo ln -sf "$home" '/home/frappe/frappe-bench/apps/erpnext_template'
+  - sudo ln -sf "$home" '/home/frappe/frappe-bench/apps/frappe_pwa'
   # Copy and convert coverage to XML format
   - cp '/srv/erpnext/frappe/sites/.coverage' .coverage
   - coverage report -m

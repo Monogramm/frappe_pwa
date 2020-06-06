@@ -1,6 +1,6 @@
 {
-  "name": "erpnext_template",
-  "description": "TODO_APP_DESCRIPTION",
+  "name": "frappe_pwa",
+  "description": "PWA setup for Frappe website.",
   "author": "Monogramm",
   "license": "AGPL",
   "dependencies": {

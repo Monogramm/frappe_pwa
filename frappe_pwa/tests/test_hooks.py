@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 
 import unittest
 
-from erpnext_template.hooks import app_title, app_publisher, app_name, app_description, app_icon, app_color, app_email, \
+from frappe_pwa.hooks import app_title, app_publisher, app_name, app_description, app_icon, app_color, app_email, \
     app_license
 
 

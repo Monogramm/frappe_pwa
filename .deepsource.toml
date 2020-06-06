@@ -5,7 +5,7 @@ test_patterns = [
 ]
 
 exclude_patterns = [
-  "erpnext_template/patches/**",
+  "frappe_pwa/patches/**",
   "*.min.js"
 ]
 

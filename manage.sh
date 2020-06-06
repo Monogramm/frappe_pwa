@@ -49,7 +49,7 @@ logs() {
 down() {
     log 'Stopping and removing container(s) and data...'
     dc "${1}" down ${@:2}
-    rm -rf "${ERPNEXT_HOME:-/srv/erpnext_template/frappe}"/*
+    rm -rf "${ERPNEXT_HOME:-/srv/frappe_pwa/frappe}"/*
 }
 
 console() {
@@ -57,8 +57,8 @@ console() {
 }
 
 ## TODO Add function to initialize from template
-#   - Replace all occurences of `erpnext_template` and `ERPNext Template` in all files
-#   - Rename all directories `erpnext_template`
+#   - Replace all occurences of `frappe_pwa` and `Frappe PWA` in all files
+#   - Rename all directories `frappe_pwa`
 
 prepare_release() {
     NEW_VERSION=${1}
@@ -70,7 +70,7 @@ prepare_release() {
     log 'Updating Frappe app version...'
     sed -i \
         -e "s|__version__ = '.*'|__version__ = '${NEW_VERSION}'|g" \
-        ./erpnext_template/__init__.py
+        ./frappe_pwa/__init__.py
 
     log 'Updating gitmoji-changelog version...'
     sed -i \

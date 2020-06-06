@@ -67,7 +67,7 @@ services:
       # Container setup
       - NODE_TYPE=app
       # Frappe setup
-      - FRAPPE_APP_INIT=erpnext erpnext_template
+      - FRAPPE_APP_INIT=erpnext frappe_pwa
       - FRAPPE_DEFAULT_PROTOCOL=http://
       - FRAPPE_DEFAULT_SITE=${ERPNEXT_SITE}
       - FRAPPE_LOGGING=1

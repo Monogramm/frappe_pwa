@@ -1,7 +1,7 @@
 {
   "project": {
-    "name": "erpnext_template",
-    "description": "TODO_APP_DESCRIPTION",
+    "name": "frappe_pwa",
+    "description": "PWA setup for Frappe website.",
     "version": "0.0.1"
   }
 }

@@ -8,7 +8,7 @@ docker build \
     --build-arg VCS_REF=`git rev-parse --short HEAD` \
     --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
     --build-arg BUILD_BRANCH="${SOURCE_BRANCH}" \
-    --build-arg BUILD_URL="https://github.com/Monogramm/erpnext_template" \
-    --build-arg BUILD_APP=erpnext_template \
+    --build-arg BUILD_URL="https://github.com/Monogramm/frappe_pwa" \
+    --build-arg BUILD_APP=frappe_pwa \
     -f "${DOCKERFILE_PATH}" \
     -t "${IMAGE_NAME}" .

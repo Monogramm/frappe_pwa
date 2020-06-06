@@ -9,17 +9,17 @@ import ast
 with open('requirements.txt') as f:
     install_requires = f.read().strip().split('\n')
 
-# get version from __version__ variable in erpnext_template/__init__.py
+# get version from __version__ variable in frappe_pwa/__init__.py
 _version_re = re.compile(r'__version__\s+=\s+(.*)')
 
-with open('erpnext_template/__init__.py', 'rb') as f:
+with open('frappe_pwa/__init__.py', 'rb') as f:
     version = str(ast.literal_eval(_version_re.search(
         f.read().decode('utf-8')).group(1)))
 
 setup(
-    name='erpnext_template',
+    name='frappe_pwa',
     version=version,
-    description='TODO_APP_DESCRIPTION',
+    description='PWA setup for Frappe website.',
     author='Monogramm',
     author_email='opensource@monogramm.io',
     packages=find_packages(),

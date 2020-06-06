@@ -4,7 +4,7 @@
 
 import unittest
 
-from erpnext_template.config.docs import source_link, docs_base_url, headline, sub_heading, get_context
+from frappe_pwa.config.docs import source_link, docs_base_url, headline, sub_heading, get_context
 
 
 class TestDocs(unittest.TestCase):

@@ -1,4 +1,4 @@
-FROM docker-erpnext:erpnext_template-dev
+FROM docker-erpnext:frappe_pwa-dev
 
 ADD .travis/docker_test.sh /docker_test.sh
 
