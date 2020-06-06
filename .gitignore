@@ -191,7 +191,6 @@ typings/
 .next
 
 # Frappe
-public/
 services/
 
 frappe_pwa/www/
