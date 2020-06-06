@@ -13,8 +13,8 @@ def get_data():
     return [
         {
             "module_name": "Frappe PWA",
-            "color": "grey",
-            "icon": "octicon octicon-file-directory",
+            "color": "#5A0FC8",
+            "icon": "octicon octicon-globe",
             "type": "module",
             "label": _("Frappe PWA")
         }

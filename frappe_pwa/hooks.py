@@ -10,8 +10,8 @@ app_name = "frappe_pwa"
 app_title = "Frappe PWA"
 app_publisher = "Monogramm"
 app_description = "PWA setup for Frappe website."
-app_icon = "octicon octicon-file-directory"
-app_color = "grey"
+app_icon = "octicon octicon-globe"
+app_color = "#5A0FC8"
 app_email = "opensource@monogramm.io"
 app_license = "AGPL v3"
 
@@ -24,7 +24,10 @@ app_license = "AGPL v3"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/frappe_pwa/css/frappe_pwa.css"
-# web_include_js = "/assets/frappe_pwa/js/frappe_pwa.js"
+web_include_js = [
+    "/assets/frappe_pwa/js/pwa.js"
+    "/assets/frappe_pwa/js/sw.js"
+]
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
