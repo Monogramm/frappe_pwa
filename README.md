@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/Monogramm/frappe_pwa.svg)](https://travis-ci.org/Monogramm/frappe_pwa)
 [![Coverage Status](https://coveralls.io/repos/github/Monogramm/frappe_pwa/badge.svg?branch=master)](https://coveralls.io/github/Monogramm/frappe_pwa?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/347f10fa884446c492b6ba8cd7f4d7fc)](https://app.codacy.com/gh/Monogramm/frappe_pwa?utm_source=github.com&utm_medium=referral&utm_content=Monogramm/frappe_pwa&utm_campaign=Badge_Grade_Dashboard)
+
 <!--
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/273679c703bb4f02ba1aacb350f7b1c5)](https://www.codacy.com/gh/Monogramm/frappe_pwa?utm_source=github.com&utm_medium=referral&utm_content=Monogramm/frappe_pwa&utm_campaign=Badge_Coverage)
 [![codecov](https://codecov.io/gh/Monogramm/frappe_pwa/branch/master/graph/badge.svg)](https://codecov.io/gh/Monogramm/frappe_pwa)
@@ -55,7 +56,9 @@ When installing Frappe app, the following python requirements will be installed:
 
 How to use this application:
 
-Setup website Progressive Web Application.
+-   Setup website Progressive Web Application:
+    -   Go to "_Website Settings_" and add into "_HTML HEADER & ROBOTS_" the web app manifest: `<link rel="manifest" href="/assets/frappe_pwa/manifest.json">`
+    -   Go to "_Website Settings_" and add into "_BANNER_" the link to trigger PWA install (feel free to customize design): `<a id="pwa-install-link" href="#">PWA</a>`
 
 <!--
 [TODO] If project is deployed to DockerHub:
