@@ -11,7 +11,7 @@ if ('serviceWorker' in navigator) {
         if (navigator.serviceWorker.controller) {
             console.log('[PWA] ServiceWorker found, no need to register');
         } else {
-            navigator.serviceWorker.register('/sw.js').then(
+            navigator.serviceWorker.register('/assets/frappe_pwa/js/sw.js').then(
                 function (registration) {
                     // Registration was successful
                     console.log('[PWA] ServiceWorker registration successful with scope: ' + registration.scope);

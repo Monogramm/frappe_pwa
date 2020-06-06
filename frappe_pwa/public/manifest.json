@@ -12,10 +12,6 @@
         "src": "/assets/frappe/images/favicon.png",
         "sizes": "128x128",
         "type": "image/png"
-      },
-      {
-        "src": "/assets/frappe/images/frappe-bird-grey.svg",
-        "sizes": "512x512"
       }
     ]
   }
