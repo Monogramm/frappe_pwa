@@ -71,11 +71,6 @@ Setup website Progressive Web Application.
 -   Website: <https://www.monogramm.io>
 -   Github: [@Monogramm](https://github.com/Monogramm)
 
-**AminovE99**
-
--   Website: <https://aminove99.github.io/>
--   Github: [@AminovE99](https://github.com/AminovE99)
-
 ## :handshake: Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Monogramm/frappe_pwa/issues).
