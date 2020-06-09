@@ -193,4 +193,4 @@ typings/
 # Frappe
 services/
 
-frappe_pwa/www/
+frappe_pwa/www/docs/
