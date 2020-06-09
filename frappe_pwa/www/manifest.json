@@ -1,0 +1,27 @@
+{
+  "name": "{{ app_name }}",
+  {% if short_name -%}"short_name": "{{ short_name }}",{%- endif %}
+  {% if theme_color -%}"theme_color": "{{ theme_color }}",{%- endif %}
+  {% if background_color -%}"background_color": "{{ background_color }}",{%- endif %}
+  {% if display -%}"display": "{{ display }}",{%- endif %}
+  {% if orientation -%}"orientation": "{{ orientation }}",{%- endif %}
+  {% if scope -%}"scope": "{{ scope }}",{%- endif %}
+  {% if start_url -%}"start_url": "{{ start_url }}",{%- endif %}
+  "icons": [
+    {% if icons -%}
+    {% for i in icons %}
+    {
+      "src": "{{ i.src }}"
+      {% if i.sizes -%},"sizes": "{{ i.sizes }}"{%- endif %}
+      {% if i.type -%},"type": "{{ i.type }}"{%- endif %}
+    },{% endfor %}
+    {%- else %}
+    {
+      "src": "/assets/frappe/images/favicon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+    {%- endif %}
+  ]
+}
+  
