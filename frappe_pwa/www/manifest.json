@@ -3,25 +3,37 @@
   {% if short_name -%}"short_name": "{{ short_name }}",{%- endif %}
   {% if theme_color -%}"theme_color": "{{ theme_color }}",{%- endif %}
   {% if background_color -%}"background_color": "{{ background_color }}",{%- endif %}
-  {% if display -%}"display": "{{ display }}",{%- endif %}
-  {% if orientation -%}"orientation": "{{ orientation }}",{%- endif %}
   {% if scope -%}"scope": "{{ scope }}",{%- endif %}
   {% if start_url -%}"start_url": "{{ start_url }}",{%- endif %}
-  "icons": [
-    {% if icons -%}
-    {% for i in icons %}
+  {% if iarc_rating_id -%}"iarc_rating_id": "{{ iarc_rating_id }}",{%- endif %}
+  {% if description -%}"description": "{{ description }}",{%- endif %}
+  {% if display -%}"display": "{{ display }}",{%- endif %}
+  {% if orientation -%}"orientation": "{{ orientation }}",{%- endif %}
+  {% if dir -%}"dir": "{{ dir }}",{%- endif %}
+  {% if lang -%}"lang": "{{ lang }}",{%- endif %}
+  {% if categories -%}"categories": [{% for c in categories %}
+    "{{ c.name }}",{% endfor %}
+  ],{%- endif %}
+  {% if screenshots -%}"screenshots": [{% for s in screenshots %}
+    {
+      "src": "{{ s.src }}"
+      {% if s.sizes -%},"sizes": "{{ s.sizes }}"{%- endif %}
+      {% if s.type -%},"type": "{{ s.type }}"{%- endif %}
+    },{% endfor %}
+  ],{%- endif %}
+  {% if prefer_related_applications -%}"prefer_related_applications": {{ prefer_related_applications }},{%- endif %}
+  {% if related_applications -%}"related_applications": [{% for r in related_applications %}
+    {
+      "platform": "{{ r.platform }}"
+      ,"url": "{{ r.url }}"
+      {% if r.id -%},"id": "{{ r.id }}"{%- endif %}
+    },{% endfor %}
+  ],{%- endif %}
+  "icons": [{% for i in icons %}
     {
       "src": "{{ i.src }}"
       {% if i.sizes -%},"sizes": "{{ i.sizes }}"{%- endif %}
       {% if i.type -%},"type": "{{ i.type }}"{%- endif %}
     },{% endfor %}
-    {%- else %}
-    {
-      "src": "/assets/frappe/images/favicon.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    }
-    {%- endif %}
   ]
 }
-  
