@@ -9,16 +9,22 @@ var CACHE_NAME = 'frappe-cache-v1';
 var urlsToCache = [
     '/',
     '/manifest.json',
+    '{{ (favicon or "/assets/frappe/images/favicon.png") | abs_url }}',
+    // CSS
     '/assets/frappe/css/bootstrap.css',
+    '/assets/css/frappe-web.css',
+    '/website_theme.css',
+    {%- for link in web_include_css %}
+    '{{ link|abs_url }}',
+    {%- endfor %}
+    // JS
     '/assets/frappe/js/lib/bootstrap.min.js',
     '/assets/frappe/js/lib/socket.io.min.js',
     '/assets/frappe/js/lib/jquery/jquery.min.js',
-    '/assets/css/frappe-web.css',
     '/assets/js/frappe-web.min.js',
-    '/website_theme.css',
-    '/website_script.js',
-    '/assets/css/erpnext-web.css',
-    '/assets/js/erpnext-web.min.js',
+	{%- for link in web_include_js %}
+    '{{ link|abs_url }}',
+    {%- endfor %}
 ];
 
 // Install stage sets up the index page (home page) in the cache and opens a new cache
