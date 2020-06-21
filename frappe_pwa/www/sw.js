@@ -5,9 +5,7 @@
  */
 
 // Service Worker
-
-// TODO Update cache name dynamically
-var CACHE_NAME = 'frappe-cache-v1';
+var CACHE_NAME = 'frappe-cache-v{{ sw_version }}';
 
 var urlsToCache = [
     '/',

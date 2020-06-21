@@ -22,3 +22,7 @@ def get_context(context):
 	settings = frappe.get_single("Website Settings")
 	if settings.favicon and settings.favicon != "attach_files:":
 		context["favicon"] = settings.favicon
+
+	# TODO Sync cache version with Frappe cache?
+	service_worker = frappe.db.get_singles_dict("Service Worker")
+	context.sw_version = service_worker.version or 1
