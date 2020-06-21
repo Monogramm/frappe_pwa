@@ -5,7 +5,10 @@
  */
 
 if ('serviceWorker' in navigator) {
-    //window.vapidPublicKey = new Uint8Array('{{ vapid_public_key }}');
+    if ('{{ vapid_public_key }}' !== '') {
+        console.log('[PWA] Set VAPID key for push notifications');
+        window.vapidPublicKey = new Uint8Array('{{ vapid_public_key }}');
+    }
 
     window.addEventListener('load', function () {
         if (navigator.serviceWorker.controller) {

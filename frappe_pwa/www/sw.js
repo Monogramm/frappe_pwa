@@ -5,7 +5,10 @@
  */
 
 // Service Worker
+
+// TODO Update cache name dynamically
 var CACHE_NAME = 'frappe-cache-v1';
+
 var urlsToCache = [
     '/',
     '/manifest.json',
@@ -73,17 +76,16 @@ this.addEventListener('activate', function (event) {
         }));
 });
 
-// TODO Respond to 'push' events and trigger notifications on the registration
-//this.addEventListener('push', function (event) {
-//    let title = (event.data && event.data.text());
-//    let body = "We have received a push message";
-//    let tag = "push-alis-srv-prv-notification";
-//    let icon = '/build/images/alis-logo.png';
-//
-//    event.waitUntil(
-//        self.registration.showNotification(title, { body, icon, tag })
-//    );
-//});
+// Respond to 'push' events and trigger notifications on the registration
+this.addEventListener('push', function (event) {
+    let title = (event.data && event.data.text());
+    let tag = "push-frappe-notification";
+    let icon = '{{ (favicon or "/assets/frappe/images/favicon.png") | abs_url }}';
+
+    event.waitUntil(
+        self.registration.showNotification(title, { icon, tag })
+    );
+});
 
 
 function fetchFromNetworkAndCache(event) {
