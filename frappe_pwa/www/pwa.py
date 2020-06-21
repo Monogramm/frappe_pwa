@@ -11,6 +11,5 @@ base_template_path = "templates/www/pwa.js"
 
 
 def get_context(context):
-    # TODO Get or generate VAPID for push notifications
-    pwa_manifest = frappe.db.get_singles_dict("Web App Manifest")
-    context.vapid_public_key = pwa_manifest.vapid_public_key or ""
+    service_worker = frappe.db.get_singles_dict("Service Worker")
+    context.vapid_public_key = service_worker.vapid_public_key or ""
