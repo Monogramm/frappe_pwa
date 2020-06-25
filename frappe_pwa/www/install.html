@@ -5,6 +5,8 @@
 {% include "templates/pages/web_sidebar.html" %}
 {% endblock %}
 {% block page_content %}
+<div id="alert-container" style="position: fixed;
+right: 100px; bottom: 100px;"></div>
 <h1>{{ _("How to install") }}</h1>
 <h2>{{ _("Learn how to install this application on your device") }}</h2>
 {{ _("This application is actually a Progressive Web App (PWA) that can be directly installed to your device. Learn more about how to install this application on your device:")}}
@@ -24,4 +26,18 @@
     <li>{{_("Confirm the name of the PWA then tap 'Add' in the upper-right corner")}}</li>
     <li>{{_("You can now launch the application from your Home Screen")}}</li>
 </ul>
+<script>
+window.onload = function() {
+    const $btn = $(`<button class="next-action"><span>Install</span></button>`);
+    const next_action_container = $(`<div class="next-action-container"></div>`);
+    $btn.click(() => showAddToHomeScreen());
+    next_action_container.append($btn);
+    frappe.show_alert({
+					message: 'Do you want to install PWA?',
+					body: next_action_container,
+					indicator: 'green',
+				});
+};
+</script>
+
 {% endblock %}
