@@ -1,0 +1,19 @@
+{
+  "name": "{{ app_name }}"
+  {% if short_name -%},"short_name": "{{ short_name }}"{%- endif %}
+  {% if theme_color -%},"theme_color": "{{ theme_color }}"{%- endif %}
+  {% if background_color -%},"background_color": "{{ background_color }}"{%- endif %}
+  {% if scope -%},"scope": "{{ scope }}"{%- endif %}
+  {% if start_url -%},"start_url": "{{ start_url }}"{%- endif %}
+  {% if iarc_rating_id -%},"iarc_rating_id": "{{ iarc_rating_id }}"{%- endif %}
+  {% if description -%},"description": "{{ description }}"{%- endif %}
+  {% if display -%},"display": "{{ display }}"{%- endif %}
+  {% if orientation -%},"orientation": "{{ orientation }}"{%- endif %}
+  {% if dir -%},"dir": "{{ dir }}"{%- endif %}
+  {% if lang -%},"lang": "{{ lang }}"{%- endif %}
+  {% if categories -%},"categories": {{ categories }}{%- endif %}
+  {% if screenshots -%},"screenshots": {{ screenshots }}{%- endif %}
+  {% if prefer_related_applications -%},"prefer_related_applications": {{ prefer_related_applications }}{%- endif %}
+  {% if related_applications -%},"related_applications": {{ related_applications}}{%- endif %}
+  {% if icons -%},"icons": {{ icons}}{%- endif %}
+}

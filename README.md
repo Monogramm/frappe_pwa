@@ -58,7 +58,7 @@ How to use this application:
 
 -   Setup website Progressive Web Application:
     -   Go to "_Website Settings_" and add into "_HTML HEADER & ROBOTS_" the web app manifest: `<link rel="manifest" href="/manifest.json">`
-    -   After that go to `/install` url and press on `install` in pop-up message
+    -   Go to `/install` url and press on `install` inside pop-up message
 
 <!--
 [TODO] If project is deployed to DockerHub:

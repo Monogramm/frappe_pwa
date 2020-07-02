@@ -34,8 +34,7 @@ def get_context(context):
     if not context.icons:
         context.icons = [{"src": "/assets/frappe/images/favicon.png",
                           "sizes": "128x128", "type": "image/png"},
-                         {"src": "/assets/frappe/images/12.png",
-                          "sizes": "144x144", "type": "image/png"}
+                         {"src": "/assets/frappe/images/12.png", "sizes": "144x144", "type": "image/png"}
                          ]
     else:
         # Remove optional fields at None
@@ -72,8 +71,9 @@ def get_context(context):
         context.prefer_related_applications = 'false'
     elif pwa_manifest.prefer_related_applications == '1':
         context.prefer_related_applications = 'true'
-    related_applications = frappe.get_all("Web App Manifest Related Application", fields=['platform', 'url', 'id'], filters={
-        "parenttype": "Web App Manifest", "parent": pwa_manifest.name})
+    related_applications = frappe.get_all("Web App Manifest Related Application", fields=['platform', 'url', 'id'],
+                                          filters={
+                                              "parenttype": "Web App Manifest", "parent": pwa_manifest.name})
     if related_applications:
         # Remove optional fields at None
         for r in related_applications:
