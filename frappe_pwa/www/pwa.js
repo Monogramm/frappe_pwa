@@ -4,6 +4,18 @@
  * Licensed under AGPL v3 (https://github.com/Monogramm/frappe_pwa/blob/master/LICENSE)
  */
 
+function show_prompt_with_installation() {
+    const $btn = $(`<button class="next-action" id="pwa-install-link"><span>Install</span></button>`);
+    const next_action_container = $(`<div class="next-action-container"></div>`);
+    $btn.click(() => addToHomeScreen());
+    next_action_container.append($btn);
+    frappe.show_alert({
+        message: 'Do you want to install PWA?',
+        body: next_action_container,
+        indicator: 'green',
+    });
+}
+
 if ('serviceWorker' in navigator) {
     if ('{{ vapid_public_key }}') {
         console.log('[PWA] Set VAPID key for push notifications');
@@ -52,7 +64,9 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('beforeinstallprompt', function (e) {
         e.preventDefault();
         installPromptEvent = e;
-
+        if (window.location.pathname === '/install') {
+            show_prompt_with_installation();
+        }
         console.log('[PWA] Application could be installed');
         showAddToHomeScreen();
     });
@@ -85,7 +99,7 @@ if ('serviceWorker' in navigator) {
         } else {
             // TODO Make this section dynamic?
             btnAdd = document.getElementById('pwa-install-link');
-    
+
             if (btnAdd === null) {
                 console.log('[PWA] The page has not finished initializing. Postponing A2HS on page load.');
                 document.body.addEventListener('load', showAddToHomeScreen);
@@ -113,7 +127,7 @@ if ('serviceWorker' in navigator) {
     // Push notifications
     function pushNotification(message) {
         navigator.serviceWorker.ready
-            .then(function (serviceWorkerRegistration)  {
+            .then(function (serviceWorkerRegistration) {
                 serviceWorkerRegistration.pushManager.getSubscription()
                     .then(function (subscription) {
                         $.post('/push', {
@@ -139,7 +153,7 @@ if ('serviceWorker' in navigator) {
             });
         }
     }
-} else if(window.location.protocol !== 'https:') {
+} else if (window.location.protocol !== 'https:') {
     console.warn('[PWA] Requires secure HTTPS connection');
 } else {
     console.warn('[PWA] No Service Worker support on your device');
