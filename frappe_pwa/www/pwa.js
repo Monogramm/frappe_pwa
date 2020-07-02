@@ -5,13 +5,16 @@
  */
 
 if ('serviceWorker' in navigator) {
-    //window.vapidPublicKey = new Uint8Array('{{ vapid_public_key }}');
+    if ('{{ vapid_public_key }}') {
+        console.log('[PWA] Set VAPID key for push notifications');
+        window.vapidPublicKey = new Uint8Array('{{ vapid_public_key }}');
+    }
 
     window.addEventListener('load', function () {
         if (navigator.serviceWorker.controller) {
             console.log('[PWA] ServiceWorker found, no need to register');
         } else {
-            navigator.serviceWorker.register('/assets/frappe_pwa/js/sw.js').then(
+            navigator.serviceWorker.register('/sw.js').then(
                 function (registration) {
                     // Registration was successful
                     console.log('[PWA] ServiceWorker registration successful with scope: ' + registration.scope);
@@ -54,22 +57,6 @@ if ('serviceWorker' in navigator) {
         showAddToHomeScreen();
     });
 
-    function showAddToHomeScreen(event) {
-        btnAdd = document.getElementById('pwa-install-link');
-
-        if (installPromptEvent === null) {
-            console.log('[PWA] No A2HS event stored for this device');
-        } else if (btnAdd === null) {
-            console.log('[PWA] The page has not finished initializing. Postponing A2HS on page load.');
-            document.body.addEventListener('load', showAddToHomeScreen);
-        } else {
-            // Update UI to notify the user they can add to home screen
-            btnAdd.classList.remove('is-hidden');
-
-            btnAdd.addEventListener('click', addToHomeScreen);
-        }
-    }
-
     function addToHomeScreen(event) {
         // Show the prompt
         hideAddToHomeScreen();
@@ -92,7 +79,27 @@ if ('serviceWorker' in navigator) {
         }
     }
 
+    function showAddToHomeScreen(event) {
+        if (installPromptEvent === null) {
+            console.log('[PWA] No A2HS event stored for this device');
+        } else {
+            // TODO Make this section dynamic?
+            btnAdd = document.getElementById('pwa-install-link');
+    
+            if (btnAdd === null) {
+                console.log('[PWA] The page has not finished initializing. Postponing A2HS on page load.');
+                document.body.addEventListener('load', showAddToHomeScreen);
+            } else {
+                // Update UI to notify the user they can add to home screen
+                btnAdd.classList.remove('is-hidden');
+
+                btnAdd.addEventListener('click', addToHomeScreen);
+            }
+        }
+    }
+
     function hideAddToHomeScreen(event) {
+        // TODO Make this section dynamic?
         btnAdd = document.getElementById('pwa-install-link');
 
         // hide our user interface that shows our A2HS button

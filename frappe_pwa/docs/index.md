@@ -8,7 +8,8 @@ See source code on GitHub at [github.com/Monogramm/frappe_pwa](https://github.co
 
 ## Docs
 
-See GitHub Pages at [monogramm.github.io/frappe_pwa](https://monogramm.github.io/frappe_pwa/).
+* See [user guide](user/index.md).
+* See GitHub Pages at [monogramm.github.io/frappe_pwa](https://monogramm.github.io/frappe_pwa/).
 
 ## Contributing
 
