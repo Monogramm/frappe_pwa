@@ -10,7 +10,7 @@ function show_prompt_with_installation() {
     $btn.click(() => addToHomeScreen());
     next_action_container.append($btn);
     frappe.show_alert({
-        message: 'Do you want to install PWA?',
+        message: {message:__("Do you want to install PWA?"),
         body: next_action_container,
         indicator: 'green',
     });
