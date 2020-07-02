@@ -26,18 +26,5 @@ right: 100px; bottom: 100px;"></div>
     <li>{{_("Confirm the name of the PWA then tap 'Add' in the upper-right corner")}}</li>
     <li>{{_("You can now launch the application from your Home Screen")}}</li>
 </ul>
-<script>
-window.onload = function() {
-    const $btn = $(`<button class="next-action"><span>Install</span></button>`);
-    const next_action_container = $(`<div class="next-action-container"></div>`);
-    $btn.click(() => showAddToHomeScreen());
-    next_action_container.append($btn);
-    frappe.show_alert({
-					message: 'Do you want to install PWA?',
-					body: next_action_container,
-					indicator: 'green',
-				});
-};
-</script>
 
 {% endblock %}
