@@ -19,7 +19,6 @@ class WebAppManifest(Document):
 
     def configure_pwa(self):
         ws = frappe.get_doc('Website Settings')
-        ws.banner_html = '''<a href="#" id="pwa-install-link">PWA</a>'''
         ws.head_html = '''<link href="/assets/frappe_pwa/manifest.json" rel="manifest">'''
         ws.save()
         self.is_asked = 1
