@@ -1,0 +1,30 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{_("How to install")}}{% endblock %}
+{% block page_sidebar %}
+{% include "templates/pages/web_sidebar.html" %}
+{% endblock %}
+{% block page_content %}
+<div id="alert-container" style="position: fixed;
+right: 100px; bottom: 100px;"></div>
+<h1>{{ _("How to install") }}</h1>
+<h2>{{ _("Learn how to install this application on your device") }}</h2>
+{{ _("This application is actually a Progressive Web App (PWA) that can be directly installed to your device. Learn more about how to install this application on your device:")}}
+<h2>{{_("Install on Chrome (desktop)")}}</h2>
+<p>{{_("When using Chrome for Desktop you can click on the menu (the 3 dots in the upper-right corner) then 'Install ...' to add the application to Chrome Applications.")}}</p>
+<h2>{{_("Install on Android")}}</h2>
+<p>{{_("Using Chrome for Android you will automatically be prompted to install the app on your system. Click 'Install' to install the application on your device.")}}</p>
+
+<h2>{{ _("Install on iOS") }}</h2>
+{{ _("To install a PWA on your Home Screen follow these steps:")}}
+<ul>
+    <li>{{_("Tap the 'Share' button of 'Safari'")}}</li>
+    <img src="./assets/ios_share.jpg" alt="{{_("Add to iOS Home Screen")}}" title="{{_("Add to iOS Home Screen")}}" class="screenshot">
+    <li>{{_("Tap the icon labeled 'Add to Home Screen'")}}</li>
+    <img src="./assets/ios_share_2.jpg" alt="{{_("Tap 'Add' in the upper-right corner")}}" title=""{{_("Tap 'Add' in the upper-right corner")}}" class="screenshot">
+    <li>{{_("Tap 'Add' in the upper-right corner")}}</li>
+    <li>{{_("Confirm the name of the PWA then tap 'Add' in the upper-right corner")}}</li>
+    <li>{{_("You can now launch the application from your Home Screen")}}</li>
+</ul>
+
+{% endblock %}
