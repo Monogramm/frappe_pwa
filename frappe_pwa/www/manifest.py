@@ -33,8 +33,7 @@ def get_context(context):
         "parenttype": "Web App Manifest", "parent": pwa_manifest.name})
     if not context.icons:
         context.icons = [{"src": "/assets/frappe/images/favicon.png",
-                          "sizes": "128x128", "type": "image/png"}
-                         ]
+                          "sizes": "128x128", "type": "image/png"}]
     else:
         # Remove optional fields at None
         for i in context.icons:
