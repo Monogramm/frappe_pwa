@@ -1,0 +1,5 @@
+{
+    "css/install.css": [
+        "public/css/alerts.css"
+    ]
+}

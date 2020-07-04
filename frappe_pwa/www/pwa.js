@@ -4,13 +4,24 @@
  * Licensed under AGPL v3 (https://github.com/Monogramm/frappe_pwa/blob/master/LICENSE)
  */
 
-function show_prompt_with_installation() {
+function showPromptWithInstallation() {
     const $btn = $(`<button class="next-action" id="pwa-install-link"><span>Install</span></button>`);
     const next_action_container = $(`<div class="next-action-container"></div>`);
     $btn.click(() => addToHomeScreen());
     next_action_container.append($btn);
     frappe.show_alert({
         message: __("Do you want to install PWA?"),
+        body: next_action_container,
+        indicator: 'green',
+    });
+}
+function showInfoPromptPWA(){
+    const $btn = $(`<button class="next-action"><span>${__("Go to Install Page")}</span></button>`);
+    const next_action_container = $(`<div class="next-action-container"></div>`);
+    $btn.click(() => window.location.href = '/install');
+    next_action_container.append($btn);
+    frappe.show_alert({
+        message: __("This application support PWA"),
         body: next_action_container,
         indicator: 'green',
     });
@@ -64,9 +75,6 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('beforeinstallprompt', function (e) {
         e.preventDefault();
         installPromptEvent = e;
-        if (window.location.pathname === '/install') {
-            show_prompt_with_installation();
-        }
         console.log('[PWA] Application could be installed');
         showAddToHomeScreen();
     });
@@ -97,9 +105,14 @@ if ('serviceWorker' in navigator) {
         if (installPromptEvent === null) {
             console.log('[PWA] No A2HS event stored for this device');
         } else {
+            if (window.location.pathname === '/install') {
+                showPromptWithInstallation();
+            }
+            else{
+                showInfoPromptPWA()
+            }
             // TODO Make this section dynamic?
             btnAdd = document.getElementById('pwa-install-link');
-
             if (btnAdd === null) {
                 console.log('[PWA] The page has not finished initializing. Postponing A2HS on page load.');
                 document.body.addEventListener('load', showAddToHomeScreen);
