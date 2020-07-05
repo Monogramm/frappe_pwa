@@ -14,5 +14,5 @@ class TestWebAppManifest(unittest.TestCase):
     def test_configure_pwa(self):
         self.web_manifest.configure_pwa()
         ws = frappe.get_doc('Website Settings')
-        ws.head_html.remove('<link href="/assets/frappe_pwa/manifest.json" rel="manifest">')
+        ws.head_html.replace('<link href="/assets/frappe_pwa/manifest.json" rel="manifest">', '')
         ws.save()
