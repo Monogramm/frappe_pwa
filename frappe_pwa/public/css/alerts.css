@@ -37,7 +37,7 @@
 
 .alert-success {
   color: #98d85b;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 0.9);
   border-color: #98d85b;
 }
 
@@ -94,13 +94,13 @@
 /* alert */
 #alert-container {
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   right: 20px;
   z-index: 1050;
 }
 
 #alert-container .desk-alert {
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   min-width: 200px;
   max-height: 200px;
@@ -110,7 +110,7 @@
   position: relative;
   transform: translateX(calc(100% + 20px));
   transition: transform 300ms ease;
-  padding: 0px;
+  padding: 0;
 }
 
 #alert-container .desk-alert .alert-message {
