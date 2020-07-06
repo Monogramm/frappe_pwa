@@ -1,5 +1,5 @@
 {
-    "css/install.css": [
-        "public/css/alerts.css"
+    "css/pwa-alerts.css": [
+        "public/css/pwa-alerts.css"
     ]
 }

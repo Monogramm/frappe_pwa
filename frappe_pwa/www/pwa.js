@@ -5,12 +5,12 @@
  */
 
 
-function showPrompt(buttonText, messageText, buttonId, f){
-    const $btn = $(`<button class="next-action" id=${buttonId}><span>${__(buttonText)}</span></button>`);
-    const next_action_container = $(`<div class="next-action-container"></div>`);
+function showPrompt(buttonText, messageText, f) {
+    const $btn = $(`<button class="pwa-next-action"><span>${__(buttonText)}</span></button>`);
+    const next_action_container = $(`<div class="pwa-next-action-container"></div>`);
     $btn.click(() => f());
     next_action_container.append($btn);
-    frappe.show_alert({
+    show_pwa_alert({
         message: __(messageText),
         body: next_action_container,
         indicator: 'green',
@@ -85,7 +85,6 @@ if ('serviceWorker' in navigator) {
                         console.log('[PWA] User accepted the A2HS prompt');
                     } else {
                         console.log('[PWA] User dismissed the A2HS prompt');
-                        $('#alert-container').hide()
                     }
                     installPromptEvent = null;
                 });
@@ -97,42 +96,24 @@ if ('serviceWorker' in navigator) {
             console.log('[PWA] No A2HS event stored for this device');
         } else {
             if (window.location.pathname === '/install') {
-                showPrompt('Install','Do you want to install PWA?',
-                    'pwa-install-link', addToHomeScreen);
-            }
-            else{
-                showPrompt('Go to Install Page','This application support PWA',
-                    'refer-to-install-page', function () {
+                // show to user prompt with PWA installation
+                showPrompt('Install', 'Do you want to install PWA?', addToHomeScreen);
+            } else {
+                // show to user prompt with Install Page redirection
+                showPrompt('Go to Install Page', 'This application support PWA', function () {
                         window.location.href = "/install";
                     });
-            }
-            // TODO Make this section dynamic?
-            btnAdd = document.getElementById('pwa-install-link');
-            if (btnAdd === null) {
-                console.log('[PWA] The page has not finished initializing. Postponing A2HS on page load.');
-                document.body.addEventListener('load', showAddToHomeScreen);
-            } else {
-                // Update UI to notify the user they can add to home screen
-                btnAdd.classList.remove('is-hidden');
-
-                btnAdd.addEventListener('click', addToHomeScreen);
             }
         }
     }
 
     function hideAddToHomeScreen(event) {
-        // TODO Make this section dynamic?
-        btnAdd = document.getElementById('pwa-install-link');
-
-        // hide our user interface that shows our A2HS button
-        if (btnAdd !== null) {
-            btnAdd.classList.add('is-hidden');
-        }
+        $('#pwa-alert-container').hide()
     }
 
     window.addEventListener('appinstalled', hideAddToHomeScreen);
 
-    // Push notifications
+// Push notifications
     function pushNotification(message) {
         navigator.serviceWorker.ready
             .then(function (serviceWorkerRegistration) {
@@ -146,7 +127,7 @@ if ('serviceWorker' in navigator) {
             });
     }
 
-    // Request to allow push notifications
+// Request to allow push notifications
     if (window.vapidPublicKey) {
         if (!("Notification" in window)) {
             console.error("[PWA] This browser does not support desktop notification");
@@ -166,3 +147,49 @@ if ('serviceWorker' in navigator) {
 } else {
     console.warn('[PWA] No Service Worker support on your device');
 }
+
+function show_pwa_alert(message, seconds = 7) {
+    if (typeof message === 'string') {
+        message = {
+            message: message
+        };
+    }
+    if (!$('#pwa-dialog-container').length) {
+        $('<div id="pwa-dialog-container"><div id="pwa-alert-container"></div></div>').appendTo('body');
+    }
+
+    let body_html;
+
+    if (message.body) {
+        body_html = message.body;
+    }
+
+    const div = $(`
+		<div class="pwa-alert pwa-desk-alert">
+			<div class="pwa-alert-message"></div>
+			<div class="pwa-alert-body" style="display: none"></div>
+			<a class="pwa-close">&times;</a>
+		</div>`);
+
+    div.find('.pwa-alert-message').append(message.message);
+
+    if (message.indicator) {
+        div.find('.pwa-alert-message').addClass('indicator ' + message.indicator);
+    }
+
+    if (body_html) {
+        div.find('.pwa-alert-body').show().html(body_html);
+    }
+
+    div.hide().appendTo("#pwa-alert-container").show()
+        .css('transform', 'translateX(0)');
+
+    div.find('.pwa-close, button').click(function () {
+        div.remove();
+        return false;
+    });
+
+    div.delay(seconds * 1000).fadeOut(300);
+    return div;
+}
+
