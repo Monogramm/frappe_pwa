@@ -1,152 +1,152 @@
 .alert {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
 }
 
 .alert h4 {
-    margin-top: 0;
-    color: inherit;
+  margin-top: 0;
+  color: inherit;
 }
 
 .alert .alert-link {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .alert > p,
 .alert > ul {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .alert > p + p {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .alert-dismissable,
 .alert-dismissible {
-    padding-right: 30px;
+  padding-right: 30px;
 }
 
 .alert-dismissable .close,
 .alert-dismissible .close {
-    position: relative;
-    top: -2px;
-    right: -21px;
-    color: inherit;
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
 }
 
 .alert-success {
-    color: #98d85b;
-    background-color: rgba(255, 255, 255, .9);
-    border-color: #98d85b;
+  color: #98d85b;
+  background-color: rgba(255, 255, 255, .9);
+  border-color: #98d85b;
 }
 
 .alert-success hr {
-    border-top-color: #8bd346;
+  border-top-color: #8bd346;
 }
 
 .alert-success .alert-link {
-    color: #7ece32;
+  color: #7ece32;
 }
 
 .alert-info {
-    color: #935eff;
-    background-color: rgba(255, 255, 255, .9);
-    border-color: #935eff;
+  color: #935eff;
+  background-color: rgba(255, 255, 255, .9);
+  border-color: #935eff;
 }
 
 .alert-info hr {
-    border-top-color: #8244ff;
+  border-top-color: #8244ff;
 }
 
 .alert-info .alert-link {
-    color: #712bff;
+  color: #712bff;
 }
 
 .alert-warning {
-    color: #ffa00a;
-    background-color: rgba(255, 255, 255, .9);
-    border-color: #ffa00a;
+  color: #ffa00a;
+  background-color: rgba(255, 255, 255, .9);
+  border-color: #ffa00a;
 }
 
 .alert-warning hr {
-    border-top-color: #f09300;
+  border-top-color: #f09300;
 }
 
 .alert-warning .alert-link {
-    color: #d68300;
+  color: #d68300;
 }
 
 .alert-danger {
-    color: #ff5858;
-    background-color: rgba(255, 255, 255, .9);
-    border-color: #ff5858;
+  color: #ff5858;
+  background-color: rgba(255, 255, 255, .9);
+  border-color: #ff5858;
 }
 
 .alert-danger hr {
-    border-top-color: #ff3f3f;
+  border-top-color: #ff3f3f;
 }
 
 .alert-danger .alert-link {
-    color: #ff2525;
+  color: #ff2525;
 }
 
 /* alert */
 #alert-container {
-    position: fixed;
-    bottom: 0px;
-    right: 20px;
-    z-index: 1050;
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  z-index: 1050;
 }
 
 #alert-container .desk-alert {
-    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    min-width: 200px;
-    max-height: 200px;
-    background-color: #fffce7;
-    border: 1px solid #d1d8dd;
-    overflow-y: auto;
-    position: relative;
-    transform: translateX(calc(100% + 20px));
-    transition: transform 300ms ease;
-    padding: 0px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  min-width: 200px;
+  max-height: 200px;
+  background-color: #fffce7;
+  border: 1px solid #d1d8dd;
+  overflow-y: auto;
+  position: relative;
+  transform: translateX(calc(100% + 20px));
+  transition: transform 300ms ease;
+  padding: 0px;
 }
 
 #alert-container .desk-alert .alert-message {
-    padding: 10px 40px 10px 10px;
+  padding: 10px 40px 10px 10px;
 }
 
 #alert-container .desk-alert .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: inherit;
-    opacity: 1;
-    font-size: inherit;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: inherit;
+  opacity: 1;
+  font-size: inherit;
 }
 
 #alert-container .desk-alert .next-action-container {
-    display: flex;
+  display: flex;
 }
 
 #alert-container .desk-alert .next-action-container .next-action {
-    border: none;
-    background: none;
-    width: 100%;
-    border-top: 1px solid #d1d8dd;
-    border-right: 1px solid #d1d8dd;
-    padding: 7px;
-    outline: none;
-    font-size: 12px;
-    font-weight: bold;
-    color: #6c7680;
+  border: none;
+  background: none;
+  width: 100%;
+  border-top: 1px solid #d1d8dd;
+  border-right: 1px solid #d1d8dd;
+  padding: 7px;
+  outline: none;
+  font-size: 12px;
+  font-weight: bold;
+  color: #6c7680;
 }
 
 #alert-container .desk-alert .next-action-container .next-action:hover {
-    background-color: #fff9cd;
+  background-color: #fff9cd;
 }
 
 #alert-container .desk-alert .next-action-container .next-action:last-child {
-    border-right: none;
+  border-right: none;
 }
