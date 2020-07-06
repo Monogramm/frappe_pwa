@@ -4,27 +4,17 @@
  * Licensed under AGPL v3 (https://github.com/Monogramm/frappe_pwa/blob/master/LICENSE)
  */
 
-function showPromptWithInstallation() {
-    const $btn = $(`<button class="next-action" id="pwa-install-link"><span>Install</span></button>`);
+
+function showPrompt(buttonText, messageText, buttonId, f){
+    const $btn = $(`<button class="next-action" id=${buttonId}><span>${__(buttonText)}</span></button>`);
     const next_action_container = $(`<div class="next-action-container"></div>`);
-    $btn.click(() => addToHomeScreen());
+    $btn.click(() => f());
     next_action_container.append($btn);
     frappe.show_alert({
-        message: __("Do you want to install PWA?"),
+        message: __(messageText),
         body: next_action_container,
         indicator: 'green',
-    });
-}
-function showInfoPromptPWA(){
-    const $btn = $(`<button class="next-action"><span>${__("Go to Install Page")}</span></button>`);
-    const next_action_container = $(`<div class="next-action-container"></div>`);
-    $btn.click(() => window.location.href = '/install');
-    next_action_container.append($btn);
-    frappe.show_alert({
-        message: __("This application support PWA"),
-        body: next_action_container,
-        indicator: 'green',
-    });
+    })
 }
 
 if ('serviceWorker' in navigator) {
@@ -95,6 +85,7 @@ if ('serviceWorker' in navigator) {
                         console.log('[PWA] User accepted the A2HS prompt');
                     } else {
                         console.log('[PWA] User dismissed the A2HS prompt');
+                        $('#alert-container').hide()
                     }
                     installPromptEvent = null;
                 });
@@ -106,10 +97,14 @@ if ('serviceWorker' in navigator) {
             console.log('[PWA] No A2HS event stored for this device');
         } else {
             if (window.location.pathname === '/install') {
-                showPromptWithInstallation();
+                showPrompt('Install','Do you want to install PWA?',
+                    'pwa-install-link', addToHomeScreen);
             }
             else{
-                showInfoPromptPWA()
+                showPrompt('Go to Install Page','This application support PWA',
+                    'refer-to-install-page', function () {
+                        window.location.href = "/install";
+                    });
             }
             // TODO Make this section dynamic?
             btnAdd = document.getElementById('pwa-install-link');
