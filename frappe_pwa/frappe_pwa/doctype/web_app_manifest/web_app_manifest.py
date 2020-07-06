@@ -19,7 +19,7 @@ class WebAppManifest(Document):
 
 @frappe.whitelist()
 def configure_pwa():
-    manifest = '''<link href="/assets/frappe_pwa/manifest.json" rel="manifest">'''
+    manifest = '''<link href="/manifest.json" rel="manifest">'''
     ws = frappe.get_doc('Website Settings')
     if not ws.head_html:
         ws.head_html = manifest
