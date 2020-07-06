@@ -6,13 +6,12 @@ from __future__ import unicode_literals
 import frappe
 import unittest
 
+from frappe_pwa.frappe_pwa.doctype.web_app_manifest.web_app_manifest import configure_pwa
+
 
 class TestWebAppManifest(unittest.TestCase):
-    def setUp(self):
-        self.web_manifest = frappe.get_doc('Web App Manifest')
-
     def test_configure_pwa(self):
-        self.web_manifest.configure_pwa()
+        configure_pwa()
         ws = frappe.get_doc('Website Settings')
         ws.head_html.replace('<link href="/assets/frappe_pwa/manifest.json" rel="manifest">', '')
         ws.save()
