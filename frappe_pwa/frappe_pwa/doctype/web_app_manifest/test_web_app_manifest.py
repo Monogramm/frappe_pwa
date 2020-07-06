@@ -13,5 +13,6 @@ class TestWebAppManifest(unittest.TestCase):
     def test_configure_pwa(self):
         configure_pwa()
         ws = frappe.get_doc('Website Settings')
+        self.assertIn('<link href="/assets/frappe_pwa/manifest.json" rel="manifest">', ws.head_html)
         ws.head_html.replace('<link href="/assets/frappe_pwa/manifest.json" rel="manifest">', '')
         ws.save()
