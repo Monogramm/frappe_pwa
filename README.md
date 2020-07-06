@@ -59,7 +59,6 @@ How to use this application:
 -   Setup website Progressive Web Application:
     -   Go to "_Website Settings_" and add into "_HTML HEADER & ROBOTS_" the web app manifest: `<link rel="manifest" href="/manifest.json">`
 
-
 After setup has been done, just go to `/install` page and press on `install` inside pop-up message.
 
 <!--
