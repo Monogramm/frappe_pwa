@@ -37,7 +37,7 @@
 
 .alert-success {
   color: #98d85b;
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.9);
   border-color: #98d85b;
 }
 
@@ -51,7 +51,7 @@
 
 .alert-info {
   color: #935eff;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 0.9);
   border-color: #935eff;
 }
 
@@ -65,7 +65,7 @@
 
 .alert-warning {
   color: #ffa00a;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 0.9);
   border-color: #ffa00a;
 }
 
@@ -79,7 +79,7 @@
 
 .alert-danger {
   color: #ff5858;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 0.9);
   border-color: #ff5858;
 }
 
