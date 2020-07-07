@@ -10,11 +10,56 @@ function showPrompt(buttonText, messageText, f) {
     const next_action_container = $(`<div class="pwa-next-action-container"></div>`);
     $btn.click(() => f());
     next_action_container.append($btn);
-    show_pwa_alert({
+    showPwaAlert({
         message: __(messageText),
         body: next_action_container,
         indicator: 'green',
     })
+}
+
+function showPwaAlert(message, seconds = 7) {
+    if (typeof message === 'string') {
+        message = {
+            message: message
+        };
+    }
+    if (!$('#pwa-dialog-container').length) {
+        $('<div id="pwa-dialog-container"><div id="pwa-alert-container"></div></div>').appendTo('body');
+    }
+
+    let body_html;
+
+    if (message.body) {
+        body_html = message.body;
+    }
+
+    const div = $(`
+		<div class="pwa-alert pwa-desk-alert">
+			<div class="pwa-alert-message"></div>
+			<div class="pwa-alert-body" style="display: none"></div>
+			<a class="pwa-close">&times;</a>
+		</div>`);
+
+    div.find('.pwa-alert-message').append(message.message);
+
+    if (message.indicator) {
+        div.find('.pwa-alert-message').addClass('indicator ' + message.indicator);
+    }
+
+    if (body_html) {
+        div.find('.pwa-alert-body').show().html(body_html);
+    }
+
+    div.hide().appendTo("#pwa-alert-container").show()
+        .css('transform', 'translateX(0)');
+
+    div.find('.pwa-close, button').click(function () {
+        div.remove();
+        return false;
+    });
+
+    div.delay(seconds * 1000).fadeOut(300);
+    return div;
 }
 
 if ('serviceWorker' in navigator) {
@@ -147,49 +192,3 @@ if ('serviceWorker' in navigator) {
 } else {
     console.warn('[PWA] No Service Worker support on your device');
 }
-
-function show_pwa_alert(message, seconds = 7) {
-    if (typeof message === 'string') {
-        message = {
-            message: message
-        };
-    }
-    if (!$('#pwa-dialog-container').length) {
-        $('<div id="pwa-dialog-container"><div id="pwa-alert-container"></div></div>').appendTo('body');
-    }
-
-    let body_html;
-
-    if (message.body) {
-        body_html = message.body;
-    }
-
-    const div = $(`
-		<div class="pwa-alert pwa-desk-alert">
-			<div class="pwa-alert-message"></div>
-			<div class="pwa-alert-body" style="display: none"></div>
-			<a class="pwa-close">&times;</a>
-		</div>`);
-
-    div.find('.pwa-alert-message').append(message.message);
-
-    if (message.indicator) {
-        div.find('.pwa-alert-message').addClass('indicator ' + message.indicator);
-    }
-
-    if (body_html) {
-        div.find('.pwa-alert-body').show().html(body_html);
-    }
-
-    div.hide().appendTo("#pwa-alert-container").show()
-        .css('transform', 'translateX(0)');
-
-    div.find('.pwa-close, button').click(function () {
-        div.remove();
-        return false;
-    });
-
-    div.delay(seconds * 1000).fadeOut(300);
-    return div;
-}
-
