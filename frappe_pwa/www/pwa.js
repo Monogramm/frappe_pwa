@@ -11,7 +11,7 @@ function showPrompt(buttonText, messageText, f) {
     $btn.click(() => f());
     next_action_container.append($btn);
     showPwaAlert({
-        message: __(messageText),
+        message: messageText,
         body: next_action_container,
         indicator: 'green',
     })
@@ -27,12 +27,6 @@ function showPwaAlert(message, seconds = 7) {
         $('<div id="pwa-dialog-container"><div id="pwa-alert-container"></div></div>').appendTo('body');
     }
 
-    let body_html;
-
-    if (message.body) {
-        body_html = message.body;
-    }
-
     const div = $(`
 		<div class="pwa-alert pwa-desk-alert">
 			<div class="pwa-alert-message"></div>
@@ -40,14 +34,15 @@ function showPwaAlert(message, seconds = 7) {
 			<a class="pwa-close">&times;</a>
 		</div>`);
 
-    div.find('.pwa-alert-message').append(message.message);
+    let pwaMessage = div.find('.pwa-alert-message');
+    pwaMessage.append(message.message);
 
     if (message.indicator) {
-        div.find('.pwa-alert-message').addClass('indicator ' + message.indicator);
+        pwaMessage.addClass('indicator ' + message.indicator);
     }
 
-    if (body_html) {
-        div.find('.pwa-alert-body').show().html(body_html);
+    if (message.body) {
+        div.find('.pwa-alert-body').show().html(message.body);
     }
 
     div.hide().appendTo("#pwa-alert-container").show()
@@ -142,10 +137,10 @@ if ('serviceWorker' in navigator) {
         } else {
             if (window.location.pathname === '/install') {
                 // show to user prompt with PWA installation
-                showPrompt('Install', 'Do you want to install PWA?', addToHomeScreen);
+                showPrompt(('{{ _("Install") }}'), '{{ _("Do you want to install PWA?") }}', addToHomeScreen);
             } else {
                 // show to user prompt with Install Page redirection
-                showPrompt('Go to Install Page', 'This application support PWA', function () {
+                showPrompt('{{ _("Go to Install Page") }}', '{{ _("This application support PWA") }}', function () {
                         window.location.href = "/install";
                     });
             }
