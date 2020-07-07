@@ -57,8 +57,7 @@ When installing Frappe app, the following python requirements will be installed:
 How to use this application:
 
 -   Setup website Progressive Web Application:
-    -   Go to "_Website Settings_" and add into "_HTML HEADER & ROBOTS_" the web app manifest: `<link rel="manifest" href="/manifest.json">`
-    -   Go to "_Website Settings_" and add into "_BANNER_" the link to trigger PWA install (feel free to customize design): `<a id="pwa-install-link" href="#">PWA</a>`
+    -   Go to "_Website Settings_" and add into "_HTML HEADER & ROBOTS_" the web app manifest: `<link rel="manifest" href="/manifest.json">` (or press on button `Automatically configure PWA`)
 
 <!--
 [TODO] If project is deployed to DockerHub:

@@ -9,7 +9,7 @@ This is the User Guide for **Frappe PWA**.
 
 ## Introduction to PWA
 
-![PWA logo](pwalogo.svg)
+![PWA logo](assets/pwalogo.svg)
 Progressive Web Apps are web applications that behave like native applications, meaning they can be installed on your smartphone (directly from your browser), can send push notifications, can work offline, ...
 
 > In order to call a Web App a PWA, technically speaking it should have the following features: Secure contexts (HTTPS), one or more Service Workers, and a manifest file.
