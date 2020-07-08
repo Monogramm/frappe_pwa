@@ -167,7 +167,7 @@ if ('serviceWorker' in navigator) {
             });
     }
 
-// Request to allow push notifications
+    // Request to allow push notifications
     if (window.vapidPublicKey) {
         if (!("Notification" in window)) {
             console.error("[PWA] This browser does not support desktop notification");
