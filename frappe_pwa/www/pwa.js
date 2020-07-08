@@ -153,7 +153,7 @@ if ('serviceWorker' in navigator) {
 
     window.addEventListener('appinstalled', hideAddToHomeScreen);
 
-// Push notifications
+    // Push notifications
     function pushNotification(message) {
         navigator.serviceWorker.ready
             .then(function (serviceWorkerRegistration) {
