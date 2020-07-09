@@ -1,15 +1,19 @@
 apps/frappe_pwa/config/desktop.py,Frappe PWA,Frappe PWA
-apps/frappe/frappe/www/install.html,How to install,Как установить
-apps/frappe/frappe/www/install.html,Learn how to install this application on your device,Узнайте как установить это приложение на ваш девайс
-apps/frappe/frappe/www/install.html,This application is actually a Progressive Web App (PWA) that can be directly installed to your device. Learn more about how to install this application on your device:,Это приложение является прогрессивным веб-приложением которое можно установить на ваше устройство
-apps/frappe/frappe/www/install.html,Install on iOS,Установка на iOS
-apps/frappe/frappe/www/install.html,To install a PWA on your Home Screen follow these steps:,Чтобы установить PWA на ваш рабочий стол следуйте этим шагам:
-apps/frappe/frappe/www/install.html,Tap the 'Share' button of 'Safari',Нажмите кнопку `Поделиться` в браузере 'Safari'
-apps/frappe/frappe/www/install.html,Tap the icon labeled 'Add to Home Screen',Нажмите на кнопку 'Добавить на домашний экран'
-apps/frappe/frappe/www/install.html,Tap 'Add' in the upper-right corner,Нажмите на кнопку 'Добавить' в углу справа наверху
-apps/frappe/frappe/www/install.html,Confirm the name of the PWA then tap 'Add' in the upper-right corner,Подтвердите имя PWA когда нажмете 'Добавить' в углу справа наверху
-apps/frappe/frappe/www/install.html,You can now launch the application from your Home Screen,Поздравляю! Вы можете запускать приложение с вашего рабочего стола
-apps/frappe/frappe/www/install.html,Install on Android,Установка на Android
-apps/frappe/frappe/www/install.html,Using Chrome for Android you will automatically be prompted to install the app on your system. Click 'Install' to install the application on your device.,Используя Chrome для андроида вам автоматически будет предложено установить приложение на вашей системе. Нажмите 'Установить' для вашем устройстве
-apps/frappe/frappe/www/install.html,Install on Chrome (desktop),Установка на Chrome(десктоп)
-apps/frappe/frappe/www/install.html,When using Chrome for Desktop you can click on the menu (the 3 dots in the upper-right corner) then 'Install ...' to add the application to Chrome Applications.,Используя Chrome зайдите в меню(3 точки справа наверху) затем нажмите 'Установить' чтобы добавить приложение.
+apps/frappe_pwa/frappe_pwa/www/install.html,How to install,Как установить
+apps/frappe_pwa/frappe_pwa/www/install.html,Learn how to install this application on your device,Узнайте как установить это приложение на ваш девайс
+apps/frappe_pwa/frappe_pwa/www/install.html,This application is actually a Progressive Web App (PWA) that can be directly installed to your device. Learn more about how to install this application on your device:,Это приложение является прогрессивным веб-приложением которое можно установить на ваше устройство
+apps/frappe_pwa/frappe_pwa/www/install.html,Install on iOS,Установка на iOS
+apps/frappe_pwa/frappe_pwa/www/install.html,To install a PWA on your Home Screen follow these steps:,Чтобы установить PWA на ваш рабочий стол следуйте этим шагам:
+apps/frappe_pwa/frappe_pwa/www/install.html,Tap the 'Share' button of 'Safari',Нажмите кнопку `Поделиться` в браузере 'Safari'
+apps/frappe_pwa/frappe_pwa/www/install.html,Tap the icon labeled 'Add to Home Screen',Нажмите на кнопку 'Добавить на домашний экран'
+apps/frappe_pwa/frappe_pwa/www/install.html,Tap 'Add' in the upper-right corner,Нажмите на кнопку 'Добавить' в углу справа наверху
+apps/frappe_pwa/frappe_pwa/www/install.html,Confirm the name of the PWA then tap 'Add' in the upper-right corner,Подтвердите имя PWA когда нажмете 'Добавить' в углу справа наверху
+apps/frappe_pwa/frappe_pwa/www/install.html,You can now launch the application from your Home Screen,Поздравляю! Вы можете запускать приложение с вашего рабочего стола
+apps/frappe_pwa/frappe_pwa/www/install.html,Install on Android,Установка на Android
+apps/frappe_pwa/frappe_pwa/www/install.html,Using Chrome for Android you will automatically be prompted to install the app on your system. Click 'Install' to install the application on your device.,Используя Chrome для андроида вам автоматически будет предложено установить приложение на вашей системе. Нажмите 'Установить' для вашем устройстве
+apps/frappe_pwa/frappe_pwa/www/install.html,Install on Chrome (desktop),Установка на Chrome(десктоп)
+apps/frappe_pwa/frappe_pwa/www/install.html,When using Chrome for Desktop you can click on the menu (the 3 dots in the upper-right corner) then 'Install ...' to add the application to Chrome Applications.,Используя Chrome зайдите в меню(3 точки справа наверху) затем нажмите 'Установить' чтобы добавить приложение.
+apps/frappe_pwa/frappe_pwa/www/pwa.js,Install,Установить
+apps/frappe_pwa/frappe_pwa/www/pwa.js,Do you want to install PWA?,Установить PWA?
+apps/frappe_pwa/frappe_pwa/www/pwa.js,Go to Install Page,Перейти на страницу установки
+apps/frappe_pwa/frappe_pwa/www/pwa.js,This application support PWA,Это приложение поддерживает PWA
