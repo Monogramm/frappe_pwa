@@ -51,8 +51,6 @@ echo 'Docker tests successful'
 
 FRAPPE_APP_TO_TEST=frappe_pwa
 
-echo "Preparing Frappe application '${FRAPPE_APP_TO_TEST}' tests..."
-
 ################################################################################
 # Frappe Unit tests
 # https://frappe.io/docs/user/en/guides/automated-testing/unit-testing
@@ -60,24 +58,36 @@ echo "Preparing Frappe application '${FRAPPE_APP_TO_TEST}' tests..."
 FRAPPE_APP_UNIT_TEST_REPORT="$(pwd)/sites/.${FRAPPE_APP_TO_TEST}_unit_tests.xml"
 FRAPPE_APP_UNIT_TEST_PROFILE="$(pwd)/sites/.${FRAPPE_APP_TO_TEST}_unit_tests.prof"
 
-#bench run-tests --help
+if [ -n "${FRAPPE_APP_TO_TEST}" ]; then
 
-echo "Executing Unit Tests of '${FRAPPE_APP_TO_TEST}' app..."
-if [ "${TEST_VERSION}" = "10" ]; then
-    bench run-tests \
-        --app "${FRAPPE_APP_TO_TEST}" \
-        --junit-xml-output "${FRAPPE_APP_UNIT_TEST_REPORT}" \
-        --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}"
-else
-    bench run-tests \
-        --app "${FRAPPE_APP_TO_TEST}" \
-        --coverage \
-        --junit-xml-output "${FRAPPE_APP_UNIT_TEST_REPORT}" \
-        --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}"
+    echo "Preparing Frappe application '${FRAPPE_APP_TO_TEST}' tests..."
 
-    # TODO When frappe supports coverage report in XML format
-    # https://github.com/frappe/frappe/issues/9696
-    # --coverage-report=xml
+    bench set-config allow_tests true -g
+
+    bench doctor
+    bench enable-scheduler
+    bench doctor
+
+    #bench run-tests --help
+
+    echo "Executing Unit Tests of '${FRAPPE_APP_TO_TEST}' app..."
+    if [ "${TEST_VERSION}" = "10" ]; then
+        bench run-tests \
+            --app "${FRAPPE_APP_TO_TEST}" \
+            --junit-xml-output "${FRAPPE_APP_UNIT_TEST_REPORT}" \
+            --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}"
+    else
+        bench run-tests \
+            --app "${FRAPPE_APP_TO_TEST}" \
+            --coverage \
+            --junit-xml-output "${FRAPPE_APP_UNIT_TEST_REPORT}" \
+            --profile > "${FRAPPE_APP_UNIT_TEST_PROFILE}"
+
+        # TODO When frappe supports coverage report in XML format
+        # https://github.com/frappe/frappe/issues/9696
+        # --coverage-report=xml
+    fi
+
 fi
 
 ## Check result of tests
