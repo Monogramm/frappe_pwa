@@ -4,6 +4,7 @@
 """Configuration for hooks."""
 
 from __future__ import unicode_literals
+from . import __version__ as app_version
 
 
 app_name = "frappe_pwa"
@@ -19,7 +20,7 @@ app_license = "AGPL v3"
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = ["/assets/frappe_pwa/css/pwa-alerts.css"]
+# app_include_css = ["/assets/frappe_pwa/css/pwa-alerts.css"]
 # app_include_js = "/assets/frappe_pwa/js/frappe_pwa.js"
 
 # include js, css files in header of web template
