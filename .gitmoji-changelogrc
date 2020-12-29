@@ -2,6 +2,6 @@
   "project": {
     "name": "frappe_pwa",
     "description": "PWA setup for Frappe website.",
-    "version": "0.9.0"
+    "version": "0.9.1"
   }
 }

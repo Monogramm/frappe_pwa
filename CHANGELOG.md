@@ -1,5 +1,26 @@
 # Changelog
 
+<a name="0.9.1"></a>
+
+## 0.9.1 (2020-12-29)
+
+### Changed
+
+-   🚚 Move location of assets \[[b7f7551](https://github.com/Monogramm/frappe_pwa/commit/b7f755122d0ea530448bfdb6386fb8b11859b39f)]
+-   ⬆️ Bump ini from 1.3.5 to 1.3.8 ([#5](https://github.com/Monogramm/frappe_pwa/issues/5)) \[[4fb0d6b](https://github.com/Monogramm/frappe_pwa/commit/4fb0d6bf4c0661ec5b335dcf58c67ef65b16324e)]
+-   ⬆️ Bump bl from 4.0.2 to 4.0.3 ([#4](https://github.com/Monogramm/frappe_pwa/issues/4)) \[[5be0712](https://github.com/Monogramm/frappe_pwa/commit/5be0712ab3b51fa96210e9eb4af9bd90db3a4523)]
+-   🚸 Move lang location and help message \[[f085edf](https://github.com/Monogramm/frappe_pwa/commit/f085edfb031a3f103126361a039ff5db256e8d08)]
+-   🔧 Improve configuration \[[65ed250](https://github.com/Monogramm/frappe_pwa/commit/65ed2504ee439b19c853e4ad07e3e744455160d3)]
+
+### Fixed
+
+-   💚 Stop supporting Frappe 10 and Python 2 \[[97fdbbb](https://github.com/Monogramm/frappe_pwa/commit/97fdbbb20bb0e6f9676d73406dee9e46023c89d6)]
+-   💚 Allow tests on all sites \[[54ca842](https://github.com/Monogramm/frappe_pwa/commit/54ca842d3ca8303a779fc2189f32769ecd71d2c3)]
+
+### Security
+
+-   🔒 Fix potential security vulnerabilities \[[c6ed161](https://github.com/Monogramm/frappe_pwa/commit/c6ed1610048903efd58442027ef66c7c95c36080)]
+
 <a name="0.9.0"></a>
 
 ## 0.9.0 (2020-07-15)
