@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.0"></a>
+
+## 1.0.0 (2021-01-01)
+
+### Added
+
+-   ✨ Update year, install button and FR i18n \[[e7e2df8](https://github.com/Monogramm/frappe_pwa/commit/e7e2df8163e2077bf932e7e99d4be1de5f873851)]
+
 <a name="0.9.1"></a>
 
 ## 0.9.1 (2020-12-29)
