@@ -1,6 +1,6 @@
 /*!
  * Frappe PWA (https://github.com/Monogramm/frappe_pwa)
- * Copyright 2020 Monogramm
+ * Copyright (c) 2021 Monogramm
  * Licensed under AGPL v3 (https://github.com/Monogramm/frappe_pwa/blob/master/LICENSE)
  */
 
@@ -14,7 +14,8 @@ function showPrompt(buttonText, messageText, f) {
         message: messageText,
         body: next_action_container,
         indicator: 'green',
-    })
+    });
+    $('.btn-pwa-install').click(() => f()).show();
 }
 
 function showPwaAlert(message, seconds = 7) {
@@ -140,7 +141,7 @@ if ('serviceWorker' in navigator) {
                 showPrompt(('{{ _("Install") }}'), '{{ _("Do you want to install PWA?") }}', addToHomeScreen);
             } else {
                 // show to user prompt with Install Page redirection
-                showPrompt('{{ _("Go to Install Page") }}', '{{ _("This application support PWA") }}', function () {
+                showPrompt('{{ _("Go to Install Page") }}', '{{ _("This device supports PWA") }}', function () {
                         window.location.href = "/install";
                     });
             }
@@ -148,7 +149,8 @@ if ('serviceWorker' in navigator) {
     }
 
     function hideAddToHomeScreen(event) {
-        $('#pwa-alert-container').hide()
+        $('#pwa-alert-container').hide();
+        $('.btn-pwa-install').hide();
     }
 
     window.addEventListener('appinstalled', hideAddToHomeScreen);

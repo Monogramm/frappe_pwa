@@ -86,7 +86,7 @@ Give a :star: if this project helped you!
 
 ## :page_facing_up: License
 
-Copyright © 2020 [Monogramm](https://github.com/Monogramm).<br />
+Copyright © 2021 [Monogramm](https://github.com/Monogramm).<br />
 This project is [AGPL v3](uri_license) licensed.
 
 * * *

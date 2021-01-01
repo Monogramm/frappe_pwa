@@ -1,6 +1,6 @@
 /*!
  * Frappe PWA (https://github.com/Monogramm/frappe_pwa)
- * Copyright 2020 Monogramm
+ * Copyright (c) 2021 Monogramm
  * Licensed under AGPL v3 (https://github.com/Monogramm/frappe_pwa/blob/master/LICENSE)
  */
 

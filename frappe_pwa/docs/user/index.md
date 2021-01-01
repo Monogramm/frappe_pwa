@@ -24,16 +24,29 @@ This application allows to setup a Web App manifest and a Service Worker for you
 
 Login to Frappe desk as a System Manager and search for `Web App Manifest`. There, you can set all informations describing your web application: names, icons, ...
 
+![Web App Manifest](assets/frappe_pwa_manifest.gif)
+
 For more details on Web App Manifests: <https://developer.mozilla.org/en-US/docs/Web/Manifest>.
 
-### Service Worker
+### Service Worker (beta)
 
-Login to Frappe desk as a System Manager and search for `Service Worker`. There, you can define technical fields like VAPID keys for push notifications and other technical details.
+Login to Frappe desk as a System Manager and search for `Service Worker`. There, you can define technical fields like VAPID keys for push notifications (not yet available) and other technical details.
 
 For more details on Service Workers: <https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API>.
+
 For more details on Push Notifications: <https://developer.mozilla.org/en-US/docs/Web/API/Push_API>
+
+### How to install
+
+Once you have configured all necessary information in the **Web App Manifest**, you can configure the website settings to enable your PWA:
+
+![Website Settings](assets/frappe_pwa_website_settings.png)
+
+After that, any user that access the website will now be prompted to install the site as a Progressive Web Application. The application will also provide a page describing how to install:
+
+![How to install PWA](assets/frappe_pwa_install.gif)
 
 ## License
 
-Copyright © 2020 [Monogramm](https://github.com/Monogramm).<br />
+Copyright © 2021 [Monogramm](https://github.com/Monogramm).<br />
 This project is [AGPL v3](https://opensource.org/licenses/AGPL-3.0) licensed.

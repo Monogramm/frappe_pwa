@@ -1,5 +1,6 @@
 apps/frappe_pwa/config/desktop.py,Frappe PWA,Frappe PWA
 apps/frappe_pwa/frappe_pwa/www/install.html,How to install,Как установить
+apps/frappe_pwa/frappe_pwa/www/install.html,Install,Установить
 apps/frappe_pwa/frappe_pwa/www/install.html,Learn how to install this application on your device,Узнайте как установить это приложение на ваш девайс
 apps/frappe_pwa/frappe_pwa/www/install.html,This application is actually a Progressive Web App (PWA) that can be directly installed to your device. Learn more about how to install this application on your device:,Это приложение является прогрессивным веб-приложением которое можно установить на ваше устройство
 apps/frappe_pwa/frappe_pwa/www/install.html,Install on iOS,Установка на iOS
@@ -16,4 +17,4 @@ apps/frappe_pwa/frappe_pwa/www/install.html,When using Chrome for Desktop you ca
 apps/frappe_pwa/frappe_pwa/www/pwa.js,Install,Установить
 apps/frappe_pwa/frappe_pwa/www/pwa.js,Do you want to install PWA?,Установить PWA?
 apps/frappe_pwa/frappe_pwa/www/pwa.js,Go to Install Page,Перейти на страницу установки
-apps/frappe_pwa/frappe_pwa/www/pwa.js,This application support PWA,Это приложение поддерживает PWA
+apps/frappe_pwa/frappe_pwa/www/pwa.js,This device supports PWA,Это устройство поддерживает PWA

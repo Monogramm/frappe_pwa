@@ -1,1 +1,20 @@
 apps/frappe_pwa/config/desktop.py,Frappe PWA,Frappe PWA
+apps/frappe_pwa/frappe_pwa/www/install.html,How to install,Comment installer
+apps/frappe_pwa/frappe_pwa/www/install.html,Install,Installer
+apps/frappe_pwa/frappe_pwa/www/install.html,Learn how to install this application on your device,Découvrez comment installer cette application sur votre appareil
+apps/frappe_pwa/frappe_pwa/www/install.html,This application is actually a Progressive Web App (PWA) that can be directly installed to your device. Learn more about how to install this application on your device:,Cette application est une Progressive Web App (PWA) qui peut être directement installée sur votre appareil. Découvrez comment installer cette application sur votre appareil:
+apps/frappe_pwa/frappe_pwa/www/install.html,Install on iOS,Installer sur iOS
+apps/frappe_pwa/frappe_pwa/www/install.html,To install a PWA on your Home Screen follow these steps:,Pour installer une PWA sur votre écran d'accueil, procédez comme suit:
+apps/frappe_pwa/frappe_pwa/www/install.html,Tap the 'Share' button of 'Safari',Appuyez sur le bouton "Partager" de "Safari"
+apps/frappe_pwa/frappe_pwa/www/install.html,Tap the icon labeled 'Add to Home Screen',Appuyez sur l'icône intitulé "Ajouter à l'écran d'accueil"
+apps/frappe_pwa/frappe_pwa/www/install.html,Tap 'Add' in the upper-right corner,Appuyez sur "Ajouter" dans le coin supérieur droit
+apps/frappe_pwa/frappe_pwa/www/install.html,Confirm the name of the PWA then tap 'Add' in the upper-right corner,Confirmez le nom de la PWA puis appuyez sur "Ajouter" dans le coin supérieur droit
+apps/frappe_pwa/frappe_pwa/www/install.html,You can now launch the application from your Home Screen,Vous pouvez maintenant lancer l'application depuis votre écran d'accueil
+apps/frappe_pwa/frappe_pwa/www/install.html,Install on Android,Installer sur Android
+apps/frappe_pwa/frappe_pwa/www/install.html,Using Chrome for Android you will automatically be prompted to install the app on your system. Click 'Install' to install the application on your device.,En utilisant Chrome pour Android, vous serez automatiquement invité à installer l'application sur votre système. Cliquez sur "Installer" pour installer l'application sur votre appareil.
+apps/frappe_pwa/frappe_pwa/www/install.html,Install on Chrome (desktop),Installer sur Chrome (bureau)
+apps/frappe_pwa/frappe_pwa/www/install.html,When using Chrome for Desktop you can click on the menu (the 3 dots in the upper-right corner) then 'Install ...' to add the application to Chrome Applications.,Lorsque vous utilisez Chrome pour ordinateur de bureau, vous pouvez cliquer sur le menu (les 3 points dans le coin supérieur droit) puis sur "Installer..." pour ajouter l'application aux applications Chrome.
+apps/frappe_pwa/frappe_pwa/www/pwa.js,Install,Installer
+apps/frappe_pwa/frappe_pwa/www/pwa.js,Do you want to install PWA?,Installer la PWA?
+apps/frappe_pwa/frappe_pwa/www/pwa.js,Go to Install Page,Aller à la page d'installation
+apps/frappe_pwa/frappe_pwa/www/pwa.js,This device supports PWA,Cet appareil supporte les PWA

@@ -150,3 +150,7 @@
 #pwa-alert-container .pwa-desk-alert .pwa-next-action-container .pwa-next-action:last-child {
   border-right: none;
 }
+
+.btn-pwa-install {
+  display: none;
+}
