@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="1.0.1"></a>
+
+## 1.0.1 (2021-01-05)
+
+### Fixed
+
+-   🐛 Remove colon in FR translation \[[30213f6](https://github.com/Monogramm/frappe_pwa/commit/30213f64d1fd064174a29d93b0ddc85b09a6d31d)]
+
+### Miscellaneous
+
+-   📝 Update authors \[[9953340](https://github.com/Monogramm/frappe_pwa/commit/99533403286167c4fb7a137601c016b7763456f4)]
+
 <a name="1.0.0"></a>
 
 ## 1.0.0 (2021-01-01)
