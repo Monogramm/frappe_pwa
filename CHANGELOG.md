@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.2"></a>
+
+## 1.0.2 (2021-01-05)
+
+### Miscellaneous
+
+-   🌐 Fix FR translations \[[3d26be8](https://github.com/Monogramm/frappe_pwa/commit/3d26be8ca72f8abf81921397e4e047e75dd5eed2)]
+
 <a name="1.0.1"></a>
 
 ## 1.0.1 (2021-01-05)
