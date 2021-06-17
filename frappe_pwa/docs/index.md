@@ -14,7 +14,8 @@ See source code on GitHub at [github.com/Monogramm/frappe_pwa](https://github.co
 ## Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Monogramm/frappe_pwa/issues).
-[Check the contributing guide](./CONTRIBUTING.md).<br />
+
+[Check the contributing guide](https://github.com/Monogramm/frappe_pwa/blob/master/CONTRIBUTING.md).<br />
 
 ## License
 
